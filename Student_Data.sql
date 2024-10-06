@@ -1,6 +1,6 @@
 USE Student_Data
 
-/*Roll_number	Hours_Studied	Attendance	Parental_Involvement	
+/* Roll_number	Hours_Studied	Attendance	Parental_Involvement	
 Access_to_Resources	Extracurricular_Activities	Sleep_Hours	Previous_Scores	Motivation_Level	
 Internet_Access	Tutoring_Sessions	Family_Income	Teacher_Quality	School_Type	Peer_Influence	
 Physical_Activity	Learning_Disabilities	Parental_Education_Level	
@@ -19,7 +19,8 @@ AVG(Hours_Studied)
 from student_data
 
 
--- 1. Query to Find Students with High Motivation and Low Attendance
+-- 1. Query to Find Students with High Motivation and Low Attendance 
+	
 SELECT * FROM student_data
 
 SELECT 
@@ -30,6 +31,7 @@ From student_data
 Where Motivation_Level = 'High' and Attendance < 70
 
 -- 2. Query to Calculate Average Exam Scores by Gender
+	
 SELECT * FROM student_data
 
 SELECT 
@@ -39,6 +41,7 @@ From student_data
 group by Gender
 
 -- 3. Query to Find Students Involved in Extracurricular Activities and Their Exam Scores
+	
 SELECT * FROM student_data
 
 SELECT 
@@ -50,6 +53,7 @@ Where
 Extracurricular_Activities = 'Yes'
 
 -- 4. Query to List Students Who Have Access to Internet and Tutoring Sessions
+	
 SELECT * FROM student_data
 
 Select 
@@ -62,6 +66,7 @@ Internet_Access = 'Yes' And
 Tutoring_Sessions > 0
 
 -- 5. Query to Count the Number of Students by School Type
+	
 SELECT * FROM student_data
 
 SELECT 
@@ -72,6 +77,7 @@ Group by School_type
 
 
 -- 6. Query to Identify Students with High Family Income and High Exam Scores
+	
 SELECT * FROM student_data
 
 SELECT
@@ -85,6 +91,7 @@ Family_Income = 'High' And
 Exam_Score >= 85
 
 -- 7. Query to Show Students Who Participate in Physical Activities and Get Adequate Sleep Hours
+
 SELECT * FROM student_data
 
 SELECT
@@ -98,6 +105,7 @@ Physical_activity >= 1 And
 Sleep_Hours >= 8
 
 -- 8. Query to Calculate Average Attendance for Students Based on Parental Education Level
+
 SELECT * FROM student_data
 
 SELECT
@@ -108,6 +116,7 @@ student_data
 Group by Parental_Education_Level
 
 -- 9. Query to Find Students Who Travel More Than 10 km to School and Have Low Exam Scores
+	
 SELECT * FROM student_data
 
 Select
@@ -149,13 +158,14 @@ End AS Score_Category
 From student_data
 
 
-/*Question: Create a table named Teachers with the following columns:
+/* Create a table named Teachers with the following columns:
 
 Teacher_ID (Primary Key)
 Teacher_Name (VARCHAR)
 Subject (VARCHAR)
 Experience_Years (INT)
-Write the SQL query to define the table structure with Teacher_ID as the primary key.*/
+
+Write the SQL query to define the table structure with Teacher_ID as the primary key. */
 
 SELECT * FROM student_data
 
@@ -177,9 +187,9 @@ Values
 
 Select * from Teacher_Data
 
-/*Write a query to find students whose Motivation_Level is either 'High' or 'Low' 
+/* Write a query to find students whose Motivation_Level is either 'High' or 'Low' 
 and who have Internet_Access like 'Y%'.
-Display Roll_number, Motivation_Level, Internet_Access, and Exam_Score*/
+Display Roll_number, Motivation_Level, Internet_Access, and Exam_Score */
 
 Select 
 Roll_number,
@@ -189,9 +199,8 @@ Exam_Score
 From student_data
 Where (Motivation_Level = 'High' Or 'Low') and Internet_Access like 'Y%'
 
-/*Write a query to display Roll_number, Family_Income, and Exam_Score for students whose 
-Family_Income is between 50000 and 100000.
-
+/*Write a query to display Roll_number, Family_Income, Attendance, and Exam_Score for students whose 
+Attendance is between 65 and 80.
 */
 
 SELECT * FROM student_data
